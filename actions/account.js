@@ -112,13 +112,15 @@ export async function bulkDeleteTransactions(transactionIds) {
             throw new Error("User not Found");
         }
         
-        const transaction = await db.transaction.findMany({
+        //Get transactions to calculate balance changes
+        const transactions = await db.transaction.findMany({
             where: {
                 id: { in: transactionIds },
                 userId: user.id,
             },
         });
 
+        // Group trnasactions by account to update balances
         const accountBalanceChanges = transactions.reduce((acc, transaction) => {
             const change = 
                 transaction.type === "EXPENSE"

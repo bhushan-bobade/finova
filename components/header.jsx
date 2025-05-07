@@ -9,17 +9,30 @@ const Header = async () => {
   await checkUser();
   
   return (
-    <div className="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md z-50 border-b">
+    <header className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b">
     <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link href = "/">
             <Image src = {"/logo.png"}
             alt = "finova logo"
-            height = {150}
-            width = {250}
-            className="h-16 w-auto object-contain"
+            height = {60}
+            width = {200}
+            className="h-14 w-auto object-contain"
              />
         </Link>
+
+        {/* Navigation Links - Different for signed in/out users */}
+        <div className="hidden md:flex items-center space-x-8">
+          <SignedOut>
+            <a href="#features" className="text-gray-600 hover:text-blue-600">
+              Features
+            </a>
+            <a href="#testimonials" className="text-gray-600 hover:text-blue-600">
+              Testimonials
+            </a>
+          </SignedOut>
+        </div>
     
+{/* Action Buttons */}
 <div className="flex items-center space-x-4">
     <SignedIn>
         <Link href = {"/dashboard"} className="text-gray-600 hover:text-blue-600 flex items-center gap-2">
@@ -32,7 +45,7 @@ const Header = async () => {
         <Link href = {"/transaction/create"}>
         <Button className="flex items-center gap-2">
             <PenBox size = {18}/>
-            <span className="hidden md:inline"> Add Tranasction</span>
+            <span className="hidden md:inline">Add Tranasction</span>
         </Button>
         </Link>
     </SignedIn>
@@ -51,9 +64,8 @@ const Header = async () => {
               />
         </SignedIn>
         </div>
-
         </nav>
-    </div>
+    </header>
   )
 }
-export default Header
+export default Header;
