@@ -90,7 +90,7 @@ export default function EmailTemplate({
                         <Section style={styles.statsContainer}>
                             <div style={styles.stat}>
                                 <Text style={styles.text}>Budget Amount</Text>
-                                <Text style={styles.heading}>${data?.budgetAmount} </Text>
+                                <Text style={styles.heading}>${data?.budgetAmount}</Text>
                             </div>
                             <div style={styles.stat}>
                                 <Text style={styles.text}>Spent So Far</Text>
