@@ -38,6 +38,9 @@ npm install
 3. Setup environment variables:
 # Add your Clerk, Gemini AI, and DB credentials
 
+CLERK_API_KEY=your_clerk_api_key
+GEMINI_API_KEY=your_gemini_api_key
+DATABASE_URL=your_database_url
 
 4. Run the project
 
