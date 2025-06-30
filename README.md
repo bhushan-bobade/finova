@@ -23,10 +23,11 @@ Finova is a comprehensive financial management solution designed to address the 
 | Authentication -- Clerk                                          
 
 ---
-## 🚀 Getting Started
+##  Setup Instructions
 
 1. Clone the repository:
 
+```bash
 git clone https://github.com/yourusername/finova.git
 cd finova
 
@@ -38,7 +39,7 @@ npm install
 # Add your Clerk, Gemini AI, and DB credentials
 
 
-4. Run the project:
+4. Run the project
 
 npm run dev
 
